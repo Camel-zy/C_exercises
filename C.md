@@ -18,6 +18,17 @@
     ```
     True    (需检查边界值)
 
+- C语言中，大小写字母'A'，'B'，'C'，…，'Z' ，'a'，'b'，'c'，…，'z'的ASCII码按升序连续排列。
+  
+    False   (连续?)
+
+- 设变量已正确定义，执行以下程序段，顺序输入三个字符'Q'，则输出Q。 
+    ```C
+    ch = getchar(); 
+    putchar(ch); 
+    ```
+    False   (三个字符'Q')
+
 - 一维数组定义的一般形式如下：
     ```C
     类型名 数组名[数组长度]；
@@ -30,7 +41,24 @@
     
     True
 
+- 二维数组定义的一般形式如下，其中的类型名指定数组名的类型。
+    ```C
+    类型名 数组名[行长度][列长度]；
+    ```
+    False   (类型名指定数组中每个元素的类型)
+
+- 二维数组定义的一般形式如下，其中的行长度和列长度都是整型常量表达式。
+    ```C
+    类型名 数组名[行长度] [列长度]；
+    ```
+    True (允许空格、换行)
 ---
+
+- 引用二维数组的元素要指定两个下标，即行下标和列下标，一般形式如下。
+    ```C
+    数组名[列下标][行下标]
+    ```
+    False
 
 ## 选择
 
@@ -127,6 +155,123 @@
 
     D.如函数调用时，实参与形参都为变量，则这两个变量不可能占用同一内存空间
 
+- (多)对于以下两个程序段，下列叙述正确的是（ ）。   ACF
+
+A.在程序段1和程序段2中，语句y = x + 1;的执行条件皆为满足x<1。
+
+B.在程序段1和程序段2中，语句y = x + 1;的执行条件皆为满足x<2。
+
+C.在程序段1中，语句y = x + 2;的执行条件是满足x>=2。
+
+D.在程序段1中，语句y = x + 2;的执行条件是满足x>=1且x<2。
+
+E.在程序段2中，语句y = x + 2;的执行条件是满足x>=2。
+
+F.在程序段2中，语句y = x + 2;的执行条件是满足x>=1且x<2。
+```C
+/ * 程序段1 */
+if (x < 2){
+      if (x < 1){
+          y = x + 1;
+      }
+}else{
+       y = x + 2;
+}
+
+/ * 程序段2 */
+if (x < 2){
+       if (x < 1){
+           y = x + 1;
+       }else{
+           y = x + 2;
+       }
+}
+```
+- (多)设变量已正确定义，以下（）是合法的switch语句。    ACD
+    ```C
+    A.
+    switch(op){
+        default: printf("Error\n"); break;
+    }
+
+    B.
+    switch(op){
+        case '*': printf("%d\n", value1 * value2); break;
+        case '+': printf("%d\n", value1 + value2); break;
+        case '-': printf("%d\n", value1 - value2); break;
+        case '*': printf("%d\n", value1 * value2); break;
+        default: printf("Error\n"); break;
+    }
+
+    C.
+    switch('/'){
+        case '*': printf("%d\n", value1 * value2); break;
+        case '-': printf("%d\n", value1 - value2); break;
+        case '+': printf("%d\n", value1 + value2); break;
+        default: printf("Error\n"); break;
+    }
+
+    D.
+    switch(op+1){
+        default: printf("Error\n"); break;
+        case '*': printf("%d\n", value1 * value2); break;
+        case '+': printf("%d\n", value1 + value2); break;
+    }
+
+    E.
+    switch(op){
+        case op == '+': printf("%d\n", value1 + value2); break;
+        default: printf("Error\n"); break;
+    }
+    ```
+
+- (多)设变量已正确定义，以下（）是合法的C语句。     AC
+  ```C
+    A.
+    if ( n <= 10 );
+
+    B.
+    switch ( k ) {
+        case 1: printf("one"); break;
+        case 2: printf("two"); break;
+        case 1: printf("one"); break;
+        default: printf("zero"); break;
+    }
+
+    C.
+    switch ( k%2 ) {
+        default: printf("zero"); break;
+        case 1: printf("one");
+        case 1+1: printf("two");
+    }
+
+    D.
+    n = 10;
+    switch ( k ) {
+        case n%3: printf("one");
+        case n%4: printf("two");
+        default: printf("zero");
+    }
+    ```
+
+- (多)选项（ ）与以下字符数组定义等价。 ABD
+    ```C
+    static char s[6] = {'H', 'a', 'p', 'p', 'y', '\0'};
+    ```
+    ```C
+    A.
+    static char s[6] = {'H', 'a', 'p', 'p', 'y'};
+
+    B.
+    static char s[6] ="Happy";
+
+    C.
+    static char s[6] ={"Happy"};
+
+    D.
+    static char s[6] = {'H', 'a', 'p', 'p', 'y', 0};
+    ```
+
 ---
 
 ## 填空
@@ -150,4 +295,25 @@
     }
     ```
     输入china#，输出（）    c1=2,c2=5
+
+- 写出以下程序段的运行结果。请注意，直接填单词、字符或者两者的组合，前后不要加空格等任何其他字符。
+    ```C
+    double grade; 
+    scanf ("%lf", &grade); 
+    if(grade < 60); {    
+        printf("Fail"); 
+    }
+    printf("?"); 
+    ```
+    输入50，输出
+
+    输入60，输出
+
+    输入90，输出
+
+    Fail?
+
+    Fail?
+
+    Fail?
 
