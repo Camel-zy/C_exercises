@@ -1,4 +1,33 @@
 ## 判断
+- C程序中定义的变量，代表内存中的一个存储单元。  True
+
+- 执行以下程序段，sum的值是55。 False
+    ```C
+    int i, sum;
+    for (i = 1; i <= 10; i++){
+        sum = sum + i;
+    }
+    ```
+
+- C语言中的所有语句都必须以分号结束。   True
+- 若变量已正确定义，执行以下while语句将陷入死循环。 False
+    ```C
+    i = 1;
+    while (i <= 10) ;
+        i++;
+    ```
+
+- 以下程序段的功能是输出1～100之间每个整数的各位数字之和。  False(死循环)
+    ```C
+    for(num = 1; num <= 100; num++){ 
+        s = 0;
+        do{
+            s = s + num % 10;
+            num = num / 10;
+        }while(num != 0);
+        printf("%d\n", s); 
+    }
+    ```
 
 - 08是正确的整型常量。    False
 
@@ -61,6 +90,49 @@
     False
 
 ## 选择
+
+- (多)以下程序段（ ）的功能是：输入一批整数，用负数作为输入的结束标志，统计其中大于85的数据个数。   AD
+    ```C
+    A.
+        int count = 0, score;
+        scanf ("%d", &score);
+        while(score >= 0){
+            if(score > 85){
+                count++;
+            }
+            scanf ("%d", &score);
+        }
+        printf("%d\n", count);
+    B.
+        int count = 0, score;
+        scanf ("%d", &score);
+        while(score >= 0){
+            scanf ("%d", &score);
+            if(score > 85){
+                count++;
+            }
+        }
+        printf("%d\n", count);
+    C.
+        int count = 0, score;
+        while(score >= 0){
+            scanf ("%d", &score);
+            if(score > 85){
+                count++;
+            }
+        }
+        printf("%d\n", count);
+    D.
+        int count = 0, score;
+        while(1){
+            scanf ("%d", &score);
+            if(score < 0) break;
+            if(score > 85){
+                count++;
+            }
+        }
+        printf("%d\n", count);
+    ```
 
 - 下面的程序段输出是（ ）。   D
     ```C
@@ -257,24 +329,84 @@ if (x < 2){
 - (多)选项（ ）与以下字符数组定义等价。 ABD
     ```C
     static char s[6] = {'H', 'a', 'p', 'p', 'y', '\0'};
+    
+    A.static char s[6] = {'H', 'a', 'p', 'p', 'y'};
+    B.static char s[6] ="Happy";
+    C.static char s[6] ={"Happy"};
+    D.static char s[6] = {'H', 'a', 'p', 'p', 'y', 0};
     ```
+    以下能正确定义数组并正确赋初值的语句是（）。    D C中改为int c[][2]={{1,2},{3,4}}则可
     ```C
-    A.
-    static char s[6] = {'H', 'a', 'p', 'p', 'y'};
-
-    B.
-    static char s[6] ="Happy";
-
-    C.
-    static char s[6] ={"Happy"};
-
-    D.
-    static char s[6] = {'H', 'a', 'p', 'p', 'y', 0};
+    A.int N=5, b[N][N];
+    B.int a[1][2]={{1}, {3}};
+    C.int c[2][ ]={{1, 2}, {3, 4}};
+    D.int d[3][2]={{1, 2}, {34}};
     ```
+
+- 以下选项中，对基本类型相同的指针变量不能进行运算的运算符是 ( )。  A 指针相加无意义
+    A.+
+
+    B.-
+
+    C.=
+
+    D.==
 
 ---
 
 ## 填空
+
+- 若变量已正确定义，执行以下程序段，并回答下列问题。请注意，直接填数字，前后不要加空格等任何其他字符。
+    ```C
+    i = 1;
+    while (i <= 10)
+        i++;                 /* 语句① */
+        printf("%d\n", i);   /* 语句② */
+    ```
+    语句①执行了?次
+
+    语句②执行了?次
+
+    循环体语句共执行了?次
+
+    当循环结束时，变量i的值是?
+
+    10 1 10 11
+
+- 若变量已正确定义，写出以下程序段的运行结果。
+    ```C
+    scanf ("%d", &k);  
+    while(k >= 0){   
+        scanf ("%d", &k); 
+         printf("%d#", k);          
+    }
+    ```
+    输入1 2 3 0 -1，输出
+
+    输入1 0 2 3 -1，输出
+
+    输入1 2 3 -1 9，输出
+
+    2#3#0#-1#
+    0#2#3#-1#
+    2#3#-1#
+
+- 若变量已正确定义，写出以下程序段的运行结果。
+    ```C
+    scanf ("%d", &m);
+    limit = sqrt(m) + 1;
+    for(i = 2; i <= limit; i++){
+        if(m % i == 0){
+            printf("No");
+        }else{
+            printf("Yes");
+        }
+    }
+    ```
+    输入9，输出
+    输入4，输出
+    YesNoYes
+    NoYes
 
 - 写出以下程序的运行结果。请注意，直接填数字或者字符，前、后和中间不要加空格。
     ```C
@@ -317,3 +449,6 @@ if (x < 2){
 
     Fail?
 
+- 假设整型数据用两个字节表示，则用二进制表示-127的原码为？反码为？补码为？
+
+    1000000001111111 1111111110000000 1111111110000001
