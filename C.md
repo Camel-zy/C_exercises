@@ -352,6 +352,35 @@ if (x < 2){
 
     D.==
 
+- 下面程序段的运行结果是（）。  ?
+    ```C
+    char s[ ] = "language", *p = s;
+    while( *p++ != 'u') {
+        printf("%c", *p – 'a' + 'A');
+    }
+    ```
+    A.LANGUAGE
+
+    B.ANGU
+
+    C.LANGU
+
+    D.LANG
+
+- 对于以下程序段，则叙述正确的是（ ）。 D
+    ```C
+    char s[ ]="china"; 
+    char *p; 
+    p = s;
+    ```
+    A.s和p完全相同
+
+    B.数组s中的内容和指针变量p中的内容相等
+
+    C.数组s的长度和p所指向的字符串长度相等
+
+    D.*p与s[0]相等
+
 ---
 
 ## 填空
