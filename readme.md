@@ -90,7 +90,7 @@
     False
 
 - 假设结构指针p已定义并正确赋值，其指向的结构变量有一个成员是int型的num，则语句`*p.num = 100; `是正确的。   False(优先级)
- 
+
 - 表达式 (z=0, (x=2)||(z=1),z) 的值是1。 False(短路)
 
 - 运行包含以下代码段的程序将可能进入死循环。
@@ -149,7 +149,7 @@
     ```C
     int k=11;
     printf("k=%d,k=%o,k=%x\n",k,k,k);
-
+    
     A.k=11,k=12,k=11
     B.k=11,k=13,k=13
     C.k=11,k=013;k=0xb
@@ -162,7 +162,7 @@
     int b = 65536;
     a = b;
     printf("%d\n", a);
-
+    
     A.65536
     B.0
     C.-1
@@ -174,7 +174,7 @@
     int i,j;
     scanf("%3d%2d",&i,&j);
     printf("i = %d, j = %d\n",i,j);
-
+    
     A.i = 123, j = 4567
     B.i = 1234, j = 567
     C.i = 1, j = 2
@@ -186,7 +186,7 @@
     char ch;
     scanf("%3c",&ch);
     printf("%c",ch);
-
+    
     A.a
     B.b
     C.c
@@ -221,7 +221,7 @@
     ```C
     int a;
     printf("%d\n",(a=3*5,a*4,a+5));
-
+    
     A.65
     B.20
     C.15
@@ -278,7 +278,7 @@
     switch(op){
         default: printf("Error\n"); break;
     }
-
+    
     B.
     switch(op){
         case '*': printf("%d\n", value1 * value2); break;
@@ -287,7 +287,7 @@
         case '*': printf("%d\n", value1 * value2); break;
         default: printf("Error\n"); break;
     }
-
+    
     C.
     switch('/'){
         case '*': printf("%d\n", value1 * value2); break;
@@ -295,14 +295,14 @@
         case '+': printf("%d\n", value1 + value2); break;
         default: printf("Error\n"); break;
     }
-
+    
     D.
     switch(op+1){
         default: printf("Error\n"); break;
         case '*': printf("%d\n", value1 * value2); break;
         case '+': printf("%d\n", value1 + value2); break;
     }
-
+    
     E.
     switch(op){
         case op == '+': printf("%d\n", value1 + value2); break;
@@ -314,7 +314,7 @@
   ```C
     A.
     if ( n <= 10 );
-
+  
     B.
     switch ( k ) {
         case 1: printf("one"); break;
@@ -322,14 +322,14 @@
         case 1: printf("one"); break;
         default: printf("zero"); break;
     }
-
+  
     C.
     switch ( k%2 ) {
         default: printf("zero"); break;
         case 1: printf("one");
         case 1+1: printf("two");
     }
-
+  
     D.
     n = 10;
     switch ( k ) {
@@ -337,7 +337,7 @@
         case n%4: printf("two");
         default: printf("zero");
     }
-    ```
+  ```
 
 - (多)选项（ ）与以下字符数组定义等价。 ABD
     ```C
@@ -357,7 +357,7 @@
     ```
 
 - 以下选项中，对基本类型相同的指针变量不能进行运算的运算符是 ( )。  A 指针相加无意义 相减为两指针相隔元素数
-   
+  
     A.+
 
     B.-
@@ -387,13 +387,13 @@
         int age;
         int sex;
     }pup[5];
-
+    
     A.scanf("%s", &pup[0].name);
-
+    
     B.scanf("%d", &pup[1].age);
-
+    
     C.scanf("%d", &pup[2].sex);
-
+    
     D.scanf("%s", pup[4].name);
     ```
 
@@ -448,7 +448,7 @@
 
     D.仅仅搜索当前目录
 
-- 下面说法中正确的是（）。  A(题目可能存在问题)
+- 下面说法中正确的是（）。  A  (俞欢军老师认为多选ABC)  (个人感觉单选A)
 
     A.若全局变量仅在单个C文件中访问，则可以将这个变量修改为静态全局变量，以降低模块间的耦合度
 
@@ -668,7 +668,7 @@
     printf("%.3lf\n", 2.0/3);
     ```
     输出：
-    0.667   (会四舍五入)
+    0.667 	  (会四舍五入)
 
 - 阅读以下程序并回答问题。
     ```C
@@ -688,7 +688,7 @@
     }
     ```
     输出：
-    -1,6(not 4,6)
+    -1,6		(not 4,6)
 
 - 阅读以下程序并回答问题。
     ```C
@@ -711,11 +711,15 @@
     }
     ```
     输出：
-    10(not 4)   //静态变量不会重新赋初值
+    10		(not 4)   //静态变量不会重新赋初值
 
 - 根据数据存储的编码形式，C语言中处理的数据文件通常为?文件和?文件两种。
 
+    
+
 - C语言中，在成功打开一个文件后，可以使用?来获取文件缓冲区的FILE结构信息。
+
+    
 
 - fgets(s,n,fp);语句用来从fp所指示的文本文件中读取字符串s，该语句最多读取?个字符。
 
